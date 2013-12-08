@@ -1,13 +1,15 @@
 gproj-project-manage
 ====================
 
-Project management resources shared among GProj projects 
+Project management resources shared among GProj projects
 
 ## Usage
 
 ### Git Hooks
 
-The directory `src/main/resources/git/hooks` contains files for use within a source tree's `.git/hooks/` directory. Each of those files is documented in commentary in the respective file.
+The directory `src/main/resources/git/hooks/` contains files for use
+within a source tree's `.git/hooks/` directory. Each of those files is
+documented in commentary in the respective file.
 
 ### Eclipse IDE External Tools Configurations
 
@@ -15,16 +17,17 @@ The directory `src/main/resources/git/hooks` contains files for use within a sou
 
 ### Using this source tree as a submodule of other GProj component source trees
 
-This represents the primary _use case_ for the gproj-project-manage components.
+This represents the primary _use case_ for the gproj-project-manage
+components.
 
-
-Projects that this usage scenario may be developed with:
+Projects under which this usage scenario may be developed:
 
 * gproj-ghub-site-manage
-    * a submodule shall represent the published contents of the `gazebohub.github.io` web site
+    * a submodule shall represent the published contents of the
+      `gazebohub.github.io` web site
 * portal-gproj-manage
-    * a submodule shall represent the `portal-gproj` [OpenShift][oso] application, in its current design iteration
-
+    * a submodule shall represent the `portal-gproj` [OpenShift][oso]
+      application, in its current design iteration
 
 
 ## Availability
