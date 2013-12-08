@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## check-submodules.sh
+## update.sh
 ##
 ##
 ## # Usage
