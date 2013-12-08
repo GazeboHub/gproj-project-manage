@@ -1,13 +1,34 @@
 #!/bin/bash
 
+## update.sh
+##
+##
 ## # Usage
 ##
 ## This script represents an 'update' hook for Git.
 ##
+##
+## ## Installation
+##
 ## This script should be installed by the developer, such that the
-## file is installed with 'exec' permissions, to the location
-##   ${SOURCE_TREE}/.git/hooks/update
-## or called from a script installed there.
+## file would be installed with 'exec' permissions, to a file
+##
+##     ${SOURCE_TREE}/.git/hooks/update
+##
+## within a ${SOURCE_TREE} of a project, on each developer's local
+## filesystem.
+##
+## Alternately, as in situations requiring multiple update checks,
+## this script may be called from the souce tree's `update` hook
+## script, as such.
+##
+##
+## ## Usage Notes
+##
+## From the original author:
+##
+##   "Known caveat is that the '0000...' special case is not handled."
+##
 ##
 ## # Purpose
 ##
@@ -15,17 +36,32 @@
 ## submodules, to prevent synchronization failure in projects using
 ## Git submodules.
 ##
-## See also, "Pro Git", section 6.6 _Git Tools - Submodules_
+##
+## # See also
+##
+## * _"Pro Git"_
+##
+##     * Section 6.6, _Git Tools - Submodules_,
+##       Available http://git-scm.com/book/en/Git-Tools-Submodules
+##
+##     * Section 7.3, _Customizing Git - Git Hooks_,
+##       Available http://git-scm.com/book/en/Customizing-Git-Git-Hooks
+##
+## * Maual page, run-parts(8)
+##
 ##
 ## # Metadata
 ##
 ## **Origin:** Refer to https://diigo.com/01e9eh
-## **License:** Unspecified (Public Domain)
+## **License:** Unspecified (assumed: Public Domain)
 ## **Editor:** Sean Champ <spchamp+gproj _@_ me.com>
+## **Timestamp:** 8 December, 2013
 
-## Safety checks
+# # Safety checks
 
-### From default ${SOURCE_TREE}/.git/hooks/update.sample
+# ## Command Line Checks
+#
+#  From default ${SOURCE_TREE}/.git/hooks/update.sample
 
 if [ -z "$GIT_DIR" ]; then
         echo "Don't run this script from the command line." >&2
@@ -39,7 +75,9 @@ if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
         exit 1
 fi
 
-## The following is originally cf. https://diigo.com/01e9eh
+# # Main Code
+#
+# The following is originally cf. https://diigo.com/01e9eh
 
 REF=$1
 OLD=$2
