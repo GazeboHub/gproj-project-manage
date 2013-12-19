@@ -5,3 +5,4 @@
 .settings
 # Maven
 /target
+/.classpath
